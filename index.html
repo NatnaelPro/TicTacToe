@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    
+    <!-- Circle
+    <div class="circle-container">
+        <div class="big-circle">
+            <div class="small-circle"></div>
+        </div>
+    </div> -->
+
+    <!-- X
+    <div class="x-contaienr">
+        <div class="left-x"></div>
+        <div class="right-x"></div>
+    </div> -->
+
+    <h1>Tic Tac Toe</h1>
+    <select name="level" id="level">
+        <option value="easy" class="levels">Easy</option>
+        <option value="medium" class="levels" selected>Medium</option>
+        <option value="hard" class="levels">Hard (Impossible)</option>
+        <option value="playWithFriend" class="levels">Play with friend</option>
+    </select>
+    <p class="inst-para">start game or select player</p>
+    <div class="turn-conrainer"></div>
+    <!-- <p> <span class="turn">o</span> Turn</p> -->
+    <button class="btn-choice choice-x">X <span class="score xwin">-</span> </button>
+    <button class="btn-choice choice-o">O <span class="score ywin">-</span> </button>
+    <div class="game-result"></div>
+        <!-- <p class="result">X</p>
+        <p class="result">Winner!</p> -->
+    <div class="container">
+        <div class="hash_sign_container">
+            <div class="hash_sign first empty"></div>
+            <div class="hash_sign second empty"></div>
+            <div class="hash_sign third empty"></div>
+            <div class="hash_sign fourth empty"></div>
+            <div class="hash_sign fifth empty"></div>
+            <div class="hash_sign sixth empty"></div>
+            <div class="hash_sign seventh empty"></div>
+            <div class="hash_sign eighth empty"></div>
+            <div class="hash_sign ninth empty"></div>
+            <div class="dash-line-container"></div>
+            <!-- <div class="vertical-dashed-line"></div> -->
+            <!-- <div class="horizontal-dashed-line"></div> -->
+            <!-- <div class="cross-dashed-line"></div> -->
+        </div>
+    </div>
+    
+
+    <button class="btn-restart">Restart game</button>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
