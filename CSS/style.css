@@ -4,11 +4,44 @@ body {
   text-align: center;
   background-color: #043141;
   color: #fff;
+  font-family: "Kanit";
+}
+
+.main {
+  opacity: 0;
+  display: none;
+  transition: opacity 1s ease-in;
+}
+
+i {
+  margin-top: 20px;
+}
+
+i:first-child {
+  margin-right: 15px;
+}
+
+i:nth-child(2),
+i:nth-child(3) {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+i:last-child {
+  margin-left: 15px;
+}
+
+a {
+  color: #fff;
 }
 
 h1 {
   font-size: 50px;
   margin-bottom: 20px;
+}
+
+.main h1 {
+  margin-top: 10px;
 }
 
 p {
@@ -33,7 +66,7 @@ p {
   width: 150px;
   height: 40px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #21efa9;
   position: absolute;
   text-align: left;
@@ -61,12 +94,26 @@ p {
   width: 200px;
   height: 40px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #21efa9;
-  margin-top: 3%;
+  margin-top: 1%;
   font-weight: bold;
   font-size: 18px;
+  transition: 0.3s;
+  /* color: #0eb67e; */
 }
+
+/* .btn-restart:focus {
+  box-shadow: 0px 0px 0px 1px rgb(1, 91, 151);
+  color: #fff;
+  animation: btnShadow 0.3s;
+}
+
+@keyframes btnShadow {
+  100% {
+    box-shadow: 0px 0px 10px 5px rgb(1, 91, 151);
+  }
+} */
 
 .hash_sign_container {
   width: 324px;
@@ -144,6 +191,7 @@ p {
   background-color: #fff;
   border-radius: 50%;
   position: relative;
+  animation: bigCircle 0.2s ease-in;
 }
 
 .small-circle {
@@ -154,6 +202,25 @@ p {
   position: absolute;
   left: 17%;
   top: 17%;
+  animation: smallCircle 0.2s ease-in;
+}
+
+@keyframes bigCircle {
+  to {
+    border-radius: 50%;
+  }
+  from {
+    border-radius: 40%;
+  }
+}
+
+@keyframes smallCircle {
+  to {
+    border-radius: 50%;
+  }
+  from {
+    border-radius: 40%;
+  }
 }
 
 .x-container {
@@ -169,6 +236,7 @@ p {
   transform: rotate(45deg);
   position: absolute;
   border-radius: 5px;
+  animation: rightX 0.5s;
 }
 
 .right-x {
@@ -178,6 +246,18 @@ p {
   transform: rotate(135deg);
   position: absolute;
   border-radius: 5px;
+  animation: rightX 0.5s;
+}
+
+@keyframes rightX {
+  to {
+    height: 70px;
+    margin-top: 0;
+  }
+  from {
+    height: 0;
+    margin-top: 40px;
+  }
 }
 
 .result {
@@ -187,11 +267,19 @@ p {
 }
 
 .vertical-dashed-line {
+  /* height: 270px;
+  width: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 0; */
+
   height: 270px;
   width: 10px;
   background-color: #fff;
   position: absolute;
   top: 0;
+
+  animation: vdl 0.75s ease-in;
 
   /* first
   left: 22%; */
@@ -203,12 +291,29 @@ p {
   left: 76%; */
 }
 
+@keyframes vdl {
+  to {
+    height: 270px;
+  }
+  from {
+    height: 0px;
+  }
+}
+
 .horizontal-dashed-line {
+  /* height: 10px;
+  width: 270px;
+  background-color: #fff;
+  position: absolute;
+  left: 9%; */
+
   height: 10px;
   width: 270px;
   background-color: #fff;
   position: absolute;
   left: 9%;
+
+  animation: hdl 0.75s ease-in;
 
   /* top: 13%; */
 
@@ -218,6 +323,15 @@ p {
   /* top: 73%; */
 }
 
+@keyframes hdl {
+  to {
+    width: 270px;
+  }
+  from {
+    width: 0px;
+  }
+}
+
 .cross-dashed-line {
   height: 270px;
   width: 10px;
@@ -225,11 +339,30 @@ p {
   position: absolute;
   top: 0;
   left: 50%;
+  /* height: 270px;
+  width: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%; */
+
+  animation: cdl 0.75s;
   /* first
   transform: rotate(135deg); */
 
   /* second
   transform: rotate(45deg); */
+}
+
+@keyframes cdl {
+  to {
+    height: 270px;
+    top: 0;
+  }
+  from {
+    height: 0;
+    top: 50%;
+  }
 }
 
 select {

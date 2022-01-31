@@ -105,7 +105,7 @@ let displayResult = (str, position) => {
     
     document.querySelector('.choice-o').removeEventListener('click', choiceOBtnClick);
 
-    }, 510);
+    }, 1000);
 
     record = [];
 }
@@ -262,7 +262,24 @@ let createOSign = container => {
     
 }
 
+
+document.querySelector('.choice-x').addEventListener('click', ()=> {
+    if(choice == 'x' && record.length == 0){
+            document.querySelector('.choice-x').style.boxShadow =  "0px 0px 20px 5px #0eb67e";
+    
+        setTimeout(()=> {
+            document.querySelector('.choice-x').style.boxShadow =  "0px 0px 0px 1px rgba(112, 111, 211, 0)";
+        }, 300);
+    }
+});
+
 function choiceOBtnClick(){
+        document.querySelector('.choice-o').style.boxShadow =  "0px 0px 20px 5px #0eb67e";
+
+    setTimeout(()=> {
+        document.querySelector('.choice-o').style.boxShadow =  "0px 0px 0px 1px rgba(112, 111, 211, 0)";
+    }, 400);
+
     human = 'o';
     let turnContaienr = document.querySelector('.turn-conrainer');
 
@@ -297,6 +314,14 @@ document.querySelector('.btn-restart').addEventListener('click', gameRestart);
 
 
 function gameRestart(){
+    setTimeout(()=> {
+        document.querySelector('.btn-restart').style.boxShadow =  "0px 0px 20px 5px #0eb67e";
+    }, 100);
+
+    setTimeout(()=> {
+        document.querySelector('.btn-restart').style.boxShadow =  "0px 0px 0px 1px rgba(112, 111, 211, 0)";
+    }, 400);
+
     if(document.querySelector('.dash-line-container').hasChildNodes()){
         for(let val of document.querySelectorAll('.dash-line-container')){
             val.removeChild(val.lastElementChild);
@@ -644,3 +669,20 @@ select.addEventListener('change', ()=>{
     gameRestart()
 });
 
+const loader = document.querySelector('.loader');
+const main = document.querySelector('.main');
+const loadeContainer = document.querySelector('.loader-container');
+
+function init() {
+    setTimeout(() => {
+        loader.style.opacity = 0;
+        loader.style.diplay = "none";
+        loadeContainer.style.display = 'none';
+
+        main.style.display = 'block';
+        setTimeout(() => (main.style.opacity = 1), 50);
+        
+    }, 4000);
+}
+
+init();
